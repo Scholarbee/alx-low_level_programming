@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 /**
-*Point of entery
+*main - Point of entery
+*return - 0
 */
 int main(void)
 {
