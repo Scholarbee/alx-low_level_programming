@@ -1,9 +1,8 @@
 #include <stdio.h>
-
 /**
- * main -Prints 
- * separated by comma followed by space
- * Return: Always 0
+ * main - The sum of multiples of 3 or 5,
+ * followed by a new line
+ * Return: Always 0 (Success)
  */
 int main(void) {
     int limit = 1024;
