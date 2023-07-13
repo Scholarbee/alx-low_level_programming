@@ -1,68 +1,34 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
-
+#include "main.h"
 /**
- * is_positive_num- a function that find positive numbers
- * @num: number passed for argument
- *
- * Return: 1
+ * main - multiplies two positive numbers
+ * @argc: n arguments
+ * @argv: args
+ * Return: int
  */
-int is_positive_num(char *num)
+int main(int argc, char *argv[])
 {
-	while (*num)
-	{
-		if (!isdigit(*num))
-		{
-			return (0);
-		}
-		num++;
-	}
-	return (1);
-}
-
-/**
- * mul - a function to multiply two int
- * @num1: first int
- * @num2: second int
- *
- * Return: 0
- */
-int mul(char *num1, char *num2)
-{
-	int n1 = atoi(num1);
-	int n2 = atoi(num2);
-
-	return (n1 * n2);
-}
-
-/**
- * main - Entry point to function
- * @argc: number of argument
- * @argv: argument variable
- *
- * Return: 0
- */
-int main(int argc, char **argv)
-{
-	int result;
-	char *num1;
-	char *num2;
+	unsigned long mul;
+	int i, j;
 
 	if (argc != 3)
-	{
-		printf("Error\n");
-		return (98);
+	{printf("Error\n");
+	exit(98);
 	}
-	num1 = argv[1];
-	num2 = argv[2];
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] > 57 || argv[i][j] < 48)
+			{
+				printf("Error\n");
+				exit(98);
+			}
+		}
+	}
 
-	if (!is_positive_num(num1) || !is_positive_num(num2))
-	{
-		printf("Error\n");
-		return (98);
-	}
-	result = mul(num1, num2);
-	printf("%d\n", result);
+	mul = atol(argv[1]) * atol(argv[2]);
+	printf("%lu\n", mul);
+
 	return (0);
+
 }
