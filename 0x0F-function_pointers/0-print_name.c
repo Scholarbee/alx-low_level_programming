@@ -2,14 +2,13 @@
 #include <stdlib.h>
 
 /**
- * print_name - a function that prints a name
- * @name: First parameter as name to print
- * @f: second parameter as function pointer
- *
- * Return: Nothing
+ * print_name - prints a name
+ * @name: name to print
+ * @f: pointer to the printing function
  */
 void print_name(char *name, void (*f)(char *))
 {
-	if (name != NULL && f != NULL)
-		f(name);
+	if (!name || !f)
+		return;
+	f(name);
 }
